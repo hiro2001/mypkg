@@ -1,10 +1,24 @@
-# new_mypkg
+#iada new_mypkg
 
+# 開発環境:
+Ubuntu20.04
 
-# 実行方法
+Raspberry Pi 4
+<span style="color: red; ">ラズパイ３だと動かないと思われるため注意。</span>
+
+# 使用機器等
+### OS系統
+・Ubuntu20.04LTS(PC)
+
+・Raspberry Pi 4([Ubuntu20.04マイクロSD内蔵](https://onl.tw/a45isMj)Copyright (c) 2021 Ryuich Ueda)
+
+・LANケーブル
+
+# 実行
+## 実行方法(count.py)
 ロスコアを立ち上げる
  ```
-roscore
+roscore &
  ```
  実行できるようにパーミッションを設定
 
@@ -30,3 +44,25 @@ rostopic list
  ```
 rostopic echo /count_up
  ```
+
+ -------------
+## 実行方法(twice.py)
+  ```
+chmod +x twice.py
+ ```
+ ```
+rosrun mypkg twice.py
+ ```
+## 実行（最終）
+ ```
+rosrun new_mypkg count.py
+ ```
+  ```
+rostopic echo /twice
+ ```
+ ```
+rostopic echo /count_up
+ ```
+
+# ライセンス
+Copyright (c) 2021 Ryuich Ueda
