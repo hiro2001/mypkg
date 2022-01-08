@@ -10,7 +10,7 @@ def cb(message):
 	n = message.data*2
 	#rospy.loginfo(message.data*2)
 
-if__name__=='__main__':
+if __name__=='__main__':
 	rospy.init_node('twice')
 	sub = rospy.Subscriber('count_up', Int32, cb)
 	pub = rospy.Publisher('twice', Int32, queue_size = 1)
