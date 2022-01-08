@@ -30,7 +30,7 @@ source ~/.bashrc
  ```
  実行
  ```
-rosrun new_mypkg count.py
+rosrun mypkg count.py
  ```
  ノードの確認（しなくてもよいが確認のために行う）
  ```
@@ -55,7 +55,7 @@ rosrun mypkg twice.py
  ```
 ## 実行（最終）
  ```
-rosrun new_mypkg count.py
+rosrun mypkg count.py
  ```
   ```
 rostopic echo /twice
