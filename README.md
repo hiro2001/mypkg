@@ -60,9 +60,6 @@ rosrun new_mypkg count.py
   ```
 rostopic echo /twice
  ```
- ```
-rostopic echo /count_up
- ```
 
 # ライセンス
 Copyright (c) 2021 Ryuich Ueda
