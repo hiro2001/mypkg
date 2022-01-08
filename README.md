@@ -30,7 +30,7 @@ source ~/.bashrc
  ```
  実行
  ```
-rosrun mypkg count.py
+rosrun new_mypkg count.py
  ```
  ノードの確認（しなくてもよいが確認のために行う）
  ```
