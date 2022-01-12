@@ -1,4 +1,4 @@
-# timer mypkg
+# mypkg
 
 実行以降の経過時間表記をさせるROSリポジトリです。
 
@@ -99,6 +99,7 @@ rostopic echo /timer2
  ```
 # デモ動画
 
+https://youtu.be/OMmtrcRYW1M
 
 # ライセンス
 Copyright (c) 2021 Ryuich Ueda
