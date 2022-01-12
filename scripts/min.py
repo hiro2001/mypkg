@@ -12,12 +12,12 @@ n = 0
 
 def cb(message):
 	global n
-	if message.data % 600 == 0:
+	if message.data % 60 == 0:
 	        n += 1       
 
 if __name__=='__main__':
 	rospy.init_node('min')
-	sub = rospy.Subscriber('count_up', Int32, cb)
+	sub = rospy.Subscriber('second_up', Int32, cb)
 	pub = rospy.Publisher('min', Int32, queue_size = 1)
 	rate = rospy.Rate(10)
 	while not rospy.is_shutdown():
