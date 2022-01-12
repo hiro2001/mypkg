@@ -1,6 +1,8 @@
 #iada new_mypkg
 実行以降の経過時間表記をさせるリポジトリです。
 
+実行方法は下で述べますが、分と秒を表示できます。
+
 タイマーなどが狂った際に使えるかも？
 
 # 開発環境:
@@ -27,8 +29,6 @@ scriptsに入っておく
  ```
 roscore &
  ```
- 実行できるようにパーミッションを設定(やらなくて良いはずだが、一応記載)
-
  ```
 chmod +x count.py
  ```
@@ -47,25 +47,47 @@ rosnode list
  ```
 rostopic list
  ```
- 見る
+ 経過秒数のみを見る
  ```
-rostopic echo /count_up
+rostopic echo /second_up
  ```
-## 実行方法(twice.py)
- （やらなくてよいはずだが一応記載）
+## 実行方法(min.py)
   ```
-chmod +x twice.py
+chmod +x min.py
  ```
+  ```
+source ~/.bashrc
  ```
-rosrun mypkg twice.py
+ 二回目以降は下のコマンドだけで良い。
+ ```
+rosrun mypkg min.py
+ ```
+
+## 実行方法(time.py)
+  ```
+chmod +x time.py
+ ```
+  ```
+source ~/.bashrc
+ ```
+ 二回目以降は下のコマンドだけで良い。
+ ```
+rosrun mypkg time.py
  ```
 ## 実行（最終）
+ 秒表示
  ```
-rosrun mypkg count.py
+rostopic echo /timer1
  ```
+ 分表示
   ```
-rostopic echo /twice
+rostopic echo /timer2
  ```
+# デモ動画
+
 
 # ライセンス
 Copyright (c) 2021 Ryuich Ueda
+Copyright (c) 2021 Hiroyuki Matsuda
+
+ライセンスについて[LISENCE](https://github.com/hiro2001/mypkg/blob/main/LICENSE)をよく読んでからお使いください。
