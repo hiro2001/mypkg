@@ -18,6 +18,11 @@ Raspberry Pi 4
 
 # 実行
 ## 実行方法(count.py)
+scriptsに入っておく
+ ```
+ cd scripts
+ ```
+
 ロスコアを立ち上げる
  ```
 roscore &
