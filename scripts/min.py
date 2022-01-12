@@ -3,6 +3,7 @@
 #SPDX-License-Identifier:BSD-2.0
 
 #*Copyright(c)2021 Ryuich Ueda. All rights reserved.
+#*Copyright(c)2021 Hiroyuki Matsuda. All rights reserved.
 
 import rospy
 from std_msgs.msg import Int32
@@ -11,7 +12,8 @@ n = 0
 
 def cb(message):
 	global n
-	n = message.data*2
+	if(message.data % 600 == 0)
+	n += 1
 	#rospy.loginfo(message.data*2)
 
 if __name__=='__main__':

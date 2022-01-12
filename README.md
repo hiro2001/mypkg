@@ -4,7 +4,6 @@
 Ubuntu20.04
 
 Raspberry Pi 4
-<span style="color: red; ">ラズパイ３だと動かないと思われるため注意。</span>
 
 # 使用機器等
 ### OS系統
@@ -20,7 +19,7 @@ Raspberry Pi 4
  ```
 roscore &
  ```
- 実行できるようにパーミッションを設定
+ 実行できるようにパーミッションを設定(やらなくて良いはずだが、一応記載)
 
  ```
 chmod +x count.py
@@ -44,9 +43,8 @@ rostopic list
  ```
 rostopic echo /count_up
  ```
-
- -------------
 ## 実行方法(twice.py)
+ （やらなくてよいはずだが一応記載）
   ```
 chmod +x twice.py
  ```
