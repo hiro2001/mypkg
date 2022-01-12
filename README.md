@@ -16,11 +16,11 @@ ROSをインストールした後実行してください。インストール�
 [千葉工業大学上田先生のリポジトリ](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu20.04_server/blob/master/README.ja.md)
 
 インストールする前には一度 
-```
- sudo update
+ ```
+ sudo apt update
  ```
  ```
- sudo upgrade
+ sudo apt upgrade
  ```
  をすることをおすすめします。怠ると壊れたパッケージがあるというエラーメッセージが表示され、catkinが入らず、apt install もできなくなる可能性があります。
 
