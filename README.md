@@ -13,7 +13,7 @@ Raspberry Pi 4
 
 ROSをインストールした後実行してください。インストールがまだの方は以下のURLから簡単にインストールすることができます。
 
-[千葉工業大学上田先生のリポジトリ](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu20.04_server/blob/master/README.ja.md)
+[千葉工業大学上田先生のリポジトリ](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu20.04_server)
 
 インストールする前には一度 
  ```
