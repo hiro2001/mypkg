@@ -1,6 +1,6 @@
 # timer mypkg
 
-実行以降の経過時間表記をさせるリポジトリです。
+実行以降の経過時間表記をさせるROSリポジトリです。
 
 実行方法は下で述べますが、分と秒を表示できます。
 
@@ -10,6 +10,19 @@
 Ubuntu20.04
 
 Raspberry Pi 4
+
+ROSをインストールした後実行してください。インストールがまだの方は以下のURLから簡単にインストールすることができます。
+
+[千葉工業大学上田先生のリポジトリ](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu20.04_server/blob/master/README.ja.md)
+
+インストールする前には一度 
+```
+ sudo update
+ ```
+ ```
+ sudo upgrade
+ ```
+ をすることをおすすめします。怠ると壊れたパッケージがあるというエラーメッセージが表示され、catkinが入らず、apt install もできなくなる可能性があります。
 
 # 使用機器等
 ### OS系統
