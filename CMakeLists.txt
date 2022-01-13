@@ -1,69 +1,50 @@
-# toplevel CMakeLists.txt for a catkin workspace
-# catkin/cmake/toplevel.cmake
-
 cmake_minimum_required(VERSION 3.0.2)
+project(mypkg)
 
-project(Project)
+## Compile as C++11, supported in ROS Kinetic and newer
+# add_compile_options(-std=c++11)
 
-set(CATKIN_TOPLEVEL TRUE)
-
-# search for catkin within the workspace
-set(_cmd "catkin_find_pkg" "catkin" "${CMAKE_SOURCE_DIR}")
-execute_process(COMMAND ${_cmd}
-  RESULT_VARIABLE _res
-  OUTPUT_VARIABLE _out
-  ERROR_VARIABLE _err
-  OUTPUT_STRIP_TRAILING_WHITESPACE
-  ERROR_STRIP_TRAILING_WHITESPACE
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS
+  rospy
 )
-if(NOT _res EQUAL 0 AND NOT _res EQUAL 2)
-  # searching fot catkin resulted in an error
-  string(REPLACE ";" " " _cmd_str "${_cmd}")
-  message(FATAL_ERROR "Search for 'catkin' in workspace failed (${_cmd_str}): ${_err}")
-endif()
 
-# include catkin from workspace or via find_package()
-if(_res EQUAL 0)
-  set(catkin_EXTRAS_DIR "${CMAKE_SOURCE_DIR}/${_out}/cmake")
-  # include all.cmake without add_subdirectory to let it operate in same scope
-  include(${catkin_EXTRAS_DIR}/all.cmake NO_POLICY_SCOPE)
-  add_subdirectory("${_out}")
+## System dependencies are found with CMake's conventions
+# find_package(Boost REQUIRED COMPONENTS system)
 
-else()
-  # use either CMAKE_PREFIX_PATH explicitly passed to CMake as a command line argument
-  # or CMAKE_PREFIX_PATH from the environment
-  if(NOT DEFINED CMAKE_PREFIX_PATH)
-    if(NOT "$ENV{CMAKE_PREFIX_PATH}" STREQUAL "")
-      if(NOT WIN32)
-        string(REPLACE ":" ";" CMAKE_PREFIX_PATH $ENV{CMAKE_PREFIX_PATH})
-      else()
-        set(CMAKE_PREFIX_PATH $ENV{CMAKE_PREFIX_PATH})
-      endif()
-    endif()
-  endif()
 
-  # list of catkin workspaces
-  set(catkin_search_path "")
-  foreach(path ${CMAKE_PREFIX_PATH})
-    if(EXISTS "${path}/.catkin")
-      list(FIND catkin_search_path ${path} _index)
-      if(_index EQUAL -1)
-        list(APPEND catkin_search_path ${path})
-      endif()
-    endif()
-  endforeach()
+## Uncomment this if the package has a setup.py. This macro ensures
+## modules and global scripts declared therein get installed
+## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
+# catkin_python_setup()
 
-  # search for catkin in all workspaces
-  set(CATKIN_TOPLEVEL_FIND_PACKAGE TRUE)
-  find_package(catkin QUIET
-    NO_POLICY_SCOPE
-    PATHS ${catkin_search_path}
-    NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
-  unset(CATKIN_TOPLEVEL_FIND_PACKAGE)
+################################################
+## Declare ROS messages, services and actions ##
+################################################
 
-  if(NOT catkin_FOUND)
-    message(FATAL_ERROR "find_package(catkin) failed. catkin was neither found in the workspace nor in the CMAKE_PREFIX_PATH. One reason may be that no ROS setup.sh was sourced before.")
-  endif()
-endif()
+## To declare and build messages, services or actions from within this
+## package, follow these steps:
+## * Let MSG_DEP_SET be the set of packages whose message types you use in
+##   your messages/services/actions (e.g. std_msgs, actionlib_msgs, ...).
+## * In the file package.xml:
+##   * add a build_depend tag for "message_generation"
+##   * add a build_depend and a exec_depend tag for each package in MSG_DEP_SET
+##   * If MSG_DEP_SET isn't empty the following dependency has been pulled in
+##     but can be declared for certainty nonetheless:
+##     * add a exec_depend tag for "message_runtime"
+## * In this file (CMakeLists.txt):
+##   * add "message_generation" and every package in MSG_DEP_SET to
+##     find_package(catkin REQUIRED COMPONENTS ...)
+##   * add "message_runtime" and every package in MSG_DEP_SET to
+##     catkin_package(CATKIN_DEPENDS ...)
+##   * uncomment the add_*_files sections below as needed
+##     and list every .msg/.srv/.action file to be processed
+##   * uncomment the generate_messages entry below
+##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
-catkin_workspace()
+## Generate messages in the 'msg' folder
+# add_message_files(
+#   FILES
+#   Message1.msg
