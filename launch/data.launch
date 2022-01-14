@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="mypkg" name="second" type="count.py"/>
+	<node pkg="mypkg" name="min" type="min.py"/>
+	<node pkg="mypkg" name="time" type="time.py"/>
+</launch>
