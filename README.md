@@ -33,6 +33,23 @@ ROSをインストールした後実行してください。インストール�
 ・LANケーブル
 
 # 実行
+catkin_makeをいちいちうつのが面倒だったので.bashの仕様等の練習のため作成した。以下のコマンドを実行するとcatkin_makeしてくれる。
+ ```
+ ./catkin
+ ```
+## launchを使って立ち上げる
+ ```
+ roslaunch mypkg data.launch
+ ```
+以下実行しているタイマーを見ることができる。
+ ```
+ ./timer1.bash
+ ```
+ ```
+ ./timer2.bash
+ ```
+
+
 ## 実行方法(count.py)
 scriptsに入っておく
  ```
